@@ -6,8 +6,6 @@ import (
 )
 
 
-
-
 func main() {
 
 	mux := http.NewServeMux()
@@ -21,7 +19,7 @@ func main() {
 	})
 
 
-	http.ListenAndServe("localhost:8080", mux)
+	http.ListenAndServe(":8080", mux)
 }
 
 func handleRoot(w http.ResponseWriter, r *http.Request) {
