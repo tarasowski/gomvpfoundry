@@ -23,3 +23,6 @@ vendor/
 
 # Environment variables
 .env
+
+# Vite
+.vite
