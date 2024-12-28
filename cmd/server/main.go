@@ -13,8 +13,15 @@ func main() {
 	// teaching + courses
 	// golang saas boilerplate
 	// podcast like htmx-pod (small bits of go)
+	// Handle static files (CSS, JS, images, etc.)
+	// Serve static files from the "public" directory
 
 	mux := http.NewServeMux()
+
+	// Serve static files (CSS, JS, images, etc.) from the 'public' directory
+	mux.Handle("GET /public/", http.StripPrefix("/public/", http.FileServer(http.Dir("public"))))
+	mux.Handle("GET /images/", http.StripPrefix("/images/", http.FileServer(http.Dir("public/images/"))))
+	mux.Handle("GET /styles/", http.StripPrefix("/styles/", http.FileServer(http.Dir("public/styles/"))))
 
 	mux.HandleFunc("GET /", handleRoot)
 	mux.HandleFunc("GET /ai", handleGoLangAI)
