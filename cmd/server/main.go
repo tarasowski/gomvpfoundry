@@ -5,10 +5,14 @@ import (
 	"net/http"
 )
 
+
+
 func main() {
 	// focus on cto, cio, architect, tech lead, senior dev, dev
 	// golang + ai
 	// teaching + courses
+	// golang saas boilerplate
+	// podcast like htmx-pod (small bits of go)
 
 	mux := http.NewServeMux()
 
